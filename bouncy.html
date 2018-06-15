@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        /*Lets start with the cloud formation rather*/
+
+        /*The container will also serve as the SKY*/
+
+        *{ margin: 0; padding: 0;}
+
+        html{
+            background:lightseagreen;
+        }
+        body {
+            /*To hide the horizontal scroller appearing during the animation*/
+            overflow: hidden;
+        }
+
+        #clouds{
+            padding: 100px 0;
+            background: #c9dbe9;
+            background: -webkit-linear-gradient(top, #c9dbe9 0%, #464bde 100%);
+            background: -linear-gradient(top, #c9dbe9 0%, #464bde 100%);
+            background: -moz-linear-gradient(top, #c9dbe9 0%, #464bde 100%);
+        }
+
+        /*Time to finalise the cloud shape*/
+        .cloud {
+            width: 200px; height: 60px;
+            background: #fff;
+            
+            border-radius: 200px;
+            -moz-border-radius: 200px;
+            -webkit-border-radius: 200px;
+            
+            position: relative; 
+        }
+
+        .cloud:before, .cloud:after {
+            content: '';
+            position: absolute; 
+            background: #fff;
+            width: 100px; height: 80px;
+            position: absolute; top: -15px; left: 10px;
+            
+            border-radius: 100px;
+            -moz-border-radius: 100px;
+            -webkit-border-radius: 100px;
+            
+            -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+            -moz-transform: rotate(30deg);
+        }
+
+        .cloud:after {
+            width: 120px; height: 120px;
+            top: -55px; left: auto; right: 15px;
+        }
+
+        /*Time to animate*/
+        .x1 {
+            -webkit-animation: moveclouds 15s linear infinite;
+            -moz-animation: moveclouds 15s linear infinite;
+            -o-animation: moveclouds 15s linear infinite;
+        }
+
+        /*variable speed, opacity, and position of clouds for realistic effect*/
+        .x2 {
+            left: 200px;
+            
+            -webkit-transform: scale(0.6);
+            -moz-transform: scale(0.6);
+            transform: scale(0.6);
+            opacity: 0.6; /*opacity proportional to the size*/
+            
+            /*Speed will also be proportional to the size and opacity*/
+            /*More the speed. Less the time in 's' = seconds*/
+            -webkit-animation: moveclouds 25s linear infinite;
+            -moz-animation: moveclouds 25s linear infinite;
+            -o-animation: moveclouds 25s linear infinite;
+        }
+
+        .x3 {
+            left: -250px; top: -200px;
+            
+            -webkit-transform: scale(0.8);
+            -moz-transform: scale(0.8);
+            transform: scale(0.8);
+            opacity: 0.8; /*opacity proportional to the size*/
+            
+            -webkit-animation: moveclouds 20s linear infinite;
+            -moz-animation: moveclouds 20s linear infinite;
+            -o-animation: moveclouds 20s linear infinite;
+        }
+
+        .x4 {
+            left: 470px; top: -250px;
+            
+            -webkit-transform: scale(0.75);
+            -moz-transform: scale(0.75);
+            transform: scale(0.75);
+            opacity: 0.75; /*opacity proportional to the size*/
+            
+            -webkit-animation: moveclouds 18s linear infinite;
+            -moz-animation: moveclouds 18s linear infinite;
+            -o-animation: moveclouds 18s linear infinite;
+        }
+
+        .x5 {
+            left: -150px; top: -150px;
+            
+            -webkit-transform: scale(0.8);
+            -moz-transform: scale(0.8);
+            transform: scale(0.8);
+            opacity: 0.8; /*opacity proportional to the size*/
+            
+            -webkit-animation: moveclouds 20s linear infinite;
+            -moz-animation: moveclouds 20s linear infinite;
+            -o-animation: moveclouds 20s linear infinite;
+        }
+
+        @-webkit-keyframes moveclouds {
+            0% {margin-left: 1000px;}
+            100% {margin-left: -1000px}
+        }
+        @-moz-keyframes moveclouds {
+            0% {margin-left: 1000px;}
+            100% {margin-left: -1000px;}
+        }
+        @-o-keyframes moveclouds {
+            0% {margin-left: 1000px;}
+            100% {margin-left: -1000px;}
+        }    
+
+
+            @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css);
+            body {
+            font-size: 120%;
+            }
+
+            .rabbit {
+            width: 5em;
+            height: 3em;
+            background: #ffffff;
+            border-radius: 70% 90% 60% 50%;
+            position: relative;
+            box-shadow: -0.2em 1em 0 -0.75em #14927b;
+            -moz-transform: rotate(0deg) translate(-2em, 0);
+            -ms-transform: rotate(0deg) translate(-2em, 0);
+            -webkit-transform: rotate(0deg) translate(-2em, 0);
+            transform: rotate(0deg) translate(-2em, 0);
+            animation: hop 1s infinite linear;
+            z-index: 1;
+            margin-left:45%;
+            }
+            .no-flexbox .rabbit {
+            margin: 10em auto 0;
+            }
+            .rabbit:before {
+            content: "";
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            background: white;
+            border-radius: 100%;
+            top: 0.5em;
+            left: -0.3em;
+            box-shadow: 4em 0.4em 0 -0.35em #3f3334, 0.5em 1em 0 white, 4em 1em 0 -0.3em white, 4em 1em 0 -0.3em white, 4em 1em 0 -0.4em white;
+            animation: kick 1s infinite linear;
+            }
+            .rabbit:after {
+            content: "";
+            position: absolute;
+            width: .75em;
+            height: 2em;
+            background: white;
+            border-radius: 50% 100% 0 0;
+            -moz-transform: rotate(-30deg);
+            -ms-transform: rotate(-30deg);
+            -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+            right: 1em;
+            top: -1em;
+            border-top: 1px solid #f7f5f4;
+            border-left: 1px solid #f7f5f4;
+            box-shadow: -0.5em 0em 0 -0.1em white;
+            }
+
+            .clouds {
+            background: white;
+            width: 2em;
+            height: 2em;
+            border-radius: 100% 100% 0 0;
+            position: relative;
+            top: -5em;
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+            opacity: 0;
+            -moz-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+            -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+            animation: cloudy 1s infinite linear forwards;
+            box-shadow: 5em 2em 0 -0.3em white, -2em 2em 0 0 white;
+            }
+            .clouds:before, .clouds:after {
+            content: '';
+            position: absolute;
+            box-shadow: 5em 2em 0 -0.3em white, -2em 2em 0 white;
+            }
+            .clouds:before {
+            width: 1.25em;
+            height: 1.25em;
+            border-radius: 100% 100% 0 100%;
+            background: white;
+            left: -30%;
+            bottom: 0;
+            }
+            .clouds:after {
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 100% 100% 100% 0;
+            background: white;
+            right: -30%;
+            bottom: 0;
+            }
+
+            @keyframes hop {
+            20% {
+                -moz-transform: rotate(-10deg) translate(1em, -2em);
+                -ms-transform: rotate(-10deg) translate(1em, -2em);
+                -webkit-transform: rotate(-10deg) translate(1em, -2em);
+                transform: rotate(-10deg) translate(1em, -2em);
+                box-shadow: -0.2em 3em 0 -1em #14927b;
+            }
+            40% {
+                -moz-transform: rotate(10deg) translate(3em, -4em);
+                -ms-transform: rotate(10deg) translate(3em, -4em);
+                -webkit-transform: rotate(10deg) translate(3em, -4em);
+                transform: rotate(10deg) translate(3em, -4em);
+                box-shadow: -0.2em 3.25em 0 -1.1em #14927b;
+            }
+            60%,75% {
+                -moz-transform: rotate(0) translate(4em, 0);
+                -ms-transform: rotate(0) translate(4em, 0);
+                -webkit-transform: rotate(0) translate(4em, 0);
+                transform: rotate(0) translate(4em, 0);
+                box-shadow: -0.2em 1em 0 -0.75em #14927b;
+            }
+            }
+            @keyframes kick {
+            20%,50% {
+                box-shadow: 4em 0.4em 0 -0.35em #3f3334, 0.5em 1.5em 0 white, 4em 1.75em 0 -0.3em white, 4em 1.75em 0 -0.3em white, 4em 1.9em 0 -0.4em white;
+            }
+            40% {
+                box-shadow: 4em 0.4em 0 -0.35em #3f3334, 0.5em 2em 0 white, 4em 1.75em 0 -0.3em white, 4.2em 1.75em 0 -0.2em white, 4.4em 1.9em 0 -0.2em white;
+            }
+            }
+            @keyframes cloudy {
+            40% {
+                filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+                opacity: 0.75;
+                -moz-transform: translate(-3em, 0);
+                -ms-transform: translate(-3em, 0);
+                -webkit-transform: translate(-3em, 0);
+                transform: translate(-3em, 0);
+            }
+            55% {
+                filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+                opacity: 0;
+                -moz-transform: translate(-4em, 0);
+                -ms-transform: translate(-4em, 0);
+                -webkit-transform: translate(-4em, 0);
+                transform: translate(-4em, 0);
+            }
+            90% {
+                -moz-transform: translate(0, 0);
+                -ms-transform: translate(0, 0);
+                -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+            }
+            }
+        .carrot{
+            bottom: 0;
+            right: 0;
+            position: fixed;
+        }
+        .carrot a{
+            text-decoration: none;                
+        }
+    </style>
+</head>
+<body>
+    <div id="clouds">
+        <div class="cloud x1"></div>
+        <div class="cloud x2"></div>
+        <div class="cloud x3"></div>
+        <div class="cloud x4"></div>
+        <div class="cloud x5"></div>
+    </div>
+    <div class="rabbit"></div>
+    <div class="carrot">
+        <a href="/" >back</a>
+    </div>
+</body>
+</html>
